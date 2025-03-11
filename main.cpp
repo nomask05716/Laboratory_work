@@ -1,7 +1,23 @@
-#include<iostream>
-#include<cmath>
-#include<vector>
+#include <iostream>
+#include <cmath>
 using namespace std;
+
+int Perimeter_t(int side_a, int side_b, int side_c) {
+    return (side_a + side_b + side_c);
+}
+
+double area_of_Geron(double side_a, double side_b, double side_c) {
+    double semiperimeter = (side_a + side_b + side_c) / 2;
+    return sqrt(semiperimeter * (semiperimeter - side_a) * (semiperimeter - side_b) * (semiperimeter - side_c));
+}
+
+bool isosceles(int side_a, int side_b, int side_c) {
+    return (side_a == side_b || side_b == side_c || side_a == side_c);
+}
+
+bool examination(double side_a, double side_b, double side_c) {
+    return (side_a + side_b > side_c && side_a + side_c > side_b && side_b + side_c > side_a);
+}
 int Perimeter(int length, int width) {
     return ((length + width) * 2);
 }
@@ -24,16 +40,18 @@ double trapezoid_area(int side_a,int side_b,int height){
 double middle_line(int side_a,int side_b){
     return((side_a+side_b) /2.0);
 }
-int main(){
-    cout << "Здравствуйте, выберите номер:\n 1 - Вычисление параметров прямоугольника \n 2 - Вычисление параметров треугольника \n 3 - Вычисление параметров трапеции \n Ваш выбор" <<endl;
+int main() {
+    cout << "Здравствуйте, выберите номер:\n 1 - Вычисление параметров прямоугольника \n 2 - Вычисление параметров треугольника \n 3 - Вычисление параметров трапеции \n Ваш выбор: ";
     int numb;
     cin >> numb;
-    enum menu{
-        rectangle=1,
+
+    enum menu {
+        rectangle = 1,
         triangle,
         trapezoid,
-    };
-    switch(numb){
+        };
+
+    switch (numb) {
         case menu::rectangle:
             cout << "Выберите номер:\n 1 - Периметр прямоугольника \n 2 - Площадь прямоугольника \n 3 - Длина диагонали прямоугольника \n Ваш выбор>>" << endl;
             int number;
@@ -67,9 +85,71 @@ int main(){
 
             break;
             }
-        case menu::triangle:
-            
+        case menu::triangle: {
+            cout << "Выберите номер:\n 1 - Периметр треугольника \n 2 - Площадь треугольника по формуле Герона \n 3 - Проверка треугольника на равнобедренность \n Ваш выбор: ";
+            int number;
+            cin >> number;
+
+            enum triangle_menu {
+                perimeter_t_menu = 1,
+                area_of_Geron_menu,
+                isosceles_menu,
+            };
+            int side_a, side_b, side_c;
+            switch (number) {
+                case perimeter_t_menu:
+                        cout << "Введите значение стороны A: ";
+                    cin >> side_a;
+                        cout << "Введите значение стороны B: ";
+                    cin >> side_b;
+                        cout << "Введите значение стороны C: ";
+                    cin >> side_c;
+                    if (!examination(side_a, side_b, side_c)) {
+                        cout << "Треугольник не существует." << endl;
+                    } else {
+                        cout << "Периметр треугольника равен " << Perimeter_t(side_a, side_b, side_c) << endl;
+                    }
+                    break;
+
+                case area_of_Geron_menu:
+                        cout << "Введите значение стороны A: ";
+                    cin >> side_a;
+                        cout << "Введите значение стороны B: ";
+                    cin >> side_b;
+                        cout << "Введите значение стороны C: ";
+                    cin >> side_c;
+                    if (!examination(side_a, side_b, side_c)) {
+                        cout << "Треугольник не существует." << endl;
+                    } else {
+                        cout << "Площадь треугольника по формуле Герона равна " << area_of_Geron(side_a, side_b, side_c) << endl;
+                    }
+                    break;
+
+                case isosceles_menu: {
+                        cout << "Введите значение стороны A: ";
+                    cin >> side_a;
+                        cout << "Введите значение стороны B: ";
+                    cin >> side_b;
+                        cout << "Введите значение стороны C: ";
+                    cin >> side_c;
+                    if (!examination(side_a, side_b, side_c)) {
+                        cout << "Треугольник не существует." << endl;
+                    } else {
+                        bool ans = isosceles(side_a, side_b, side_c);
+                        if (ans) {
+                            cout << "Треугольник равнобедренный" << endl;
+                        } else {
+                            cout << "Треугольник не равнобедренный" << endl;
+                        }
+                    }
+                    break;
+                }
+
+                default:
+                    cout << "Неверный ввод значений" << endl;
+            }
             break;
+        }
         case menu::trapezoid:
             cout << "Выберите номер:\n 1 - Периметр трапеции \n 2 - Площадь трапеции \n 3 - Длина диагонали трапеции \n Ваш выбор>>" << endl;
             int num;
@@ -123,3 +203,4 @@ int main(){
     }
     return 0;
 }
+
