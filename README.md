@@ -40,7 +40,6 @@ geometry/ ├── main.cpp ├── rectangle.cpp ├── rectangle.h ├�
 
 + `main.cpp` - основной файл программы.
 + `rectangle.cpp`, `trapezoid.cpp`, `triangle.cpp`: Файлы реализации классов.
-+ `rectangle.h`, `trapezoid.h`, `triangle.h`: Заголовочные файлы классов.
 + `README.md`: Этот файл.
 ## Авторы
 
