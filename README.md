@@ -2,51 +2,50 @@
 
 Этот проект на C++ предоставляет классы для работы с различными геометрическими фигурами.
 
-# Функциональность
+## Функциональность
 
 Проект включает в себя следующие классы:
 
-    Прямоугольник (Rectangle):
-        Расчет периметра.
-        Расчет площади.
-        Расчет длины диагонали.
-    Трапеция (Trapezoid):
-        Расчет периметра.
-        Расчет площади.
-        Расчет длины средней линии.
-    Окружность (Circle):
-        Расчет длины окружности.
-        Расчет площади круга.
-        Расчет площади кругового сектора.
++ Прямоугольник (Rectangle):
+  + Расчет периметра.
+  + Расчет площади.
+  + Расчет длины диагонали.
++ Трапеция (Trapezoid):
+  + Расчет периметра.
+  + Расчет площади.
+  + Расчет длины средней линии.
++ Треугольник (Triangle):
+  + Расчет периметра.
+  + Расчет площади по формуле Герона.
+  + Проверка на равнобедренность.
 
-# Использование
+## Использование
 
 Клонируйте репозиторий:
 
-git clone https://github.com/rozetkaimg/prog_lab_one/tree/main
-
+```
+git clone https://github.com/nomask05716/Laboratory_work/tree/main
+```
 Скомпилируйте проект с помощью вашего компилятора C++ (например, g++):
-
-g++ main.cpp rectangle.cpp triangle.cpp  circle.cpp -o geometry
-
+```
+g++ main.cpp rectangle.cpp triangle.cpp trapezoid.cpp -o geometry
+```
 Запустите исполняемый файл:
-
+```
 ./geometry
+```
+## Структура проекта
 
-# Структура проекта
+geometry/ ├── main.cpp ├── rectangle.cpp ├── rectangle.h ├── trapezoid.cpp ├── trapezoid.h ├── triangle.cpp ├── triangle.h └── README.md
 
-geometry/ ├── main.cpp ├── rectangle.cpp ├── rectangle.h ├── trapezoid.cpp ├── trapezoid.h ├── circle.cpp ├── circle.h └── README.md
++ `main.cpp` - основной файл программы.
++ `rectangle.cpp`, `trapezoid.cpp`, `triangle.cpp`: Файлы реализации классов.
++ `rectangle.h`, `trapezoid.h`, `triangle.h`: Заголовочные файлы классов.
++ `README.md`: Этот файл.
+## Авторы
 
-    main.cpp: Основной файл программы.
-    rectangle.cpp, trapezoid.cpp, , circle.cpp: Файлы реализации классов.
-    rectangle.h, trapezoid.h, , circle.h: Заголовочные файлы классов.
-    README.md: Этот файл.
-# Авторы
-
-Асаченков Денис
-
-Мартынов Игорь
-
-Таран Александр
++ Асаченков Денис
++ Мартынов Игорь
++ Таран Александр
 
 
