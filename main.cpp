@@ -1,15 +1,16 @@
-<<<<<<< HEAD
-#include<iostream>
-#include<cmath>
-#include<vector>
-=======
 #include <iostream>
 #include <cmath>
->>>>>>> trapezoid
 using namespace std;
 
 int Perimeter_t(int side_a, int side_b, int side_c) {
-    return (side_a + side_b + side_c);
+    int a;
+    if ((side_a &&  side_b &&  side_c) >0 ){
+        a = (side_a + side_b + side_c);
+    }
+    else{
+    cout << "Cтороны не могут быть отрицательными"<<endl;
+    }
+    return a;
 }
 
 double area_of_Geron(double side_a, double side_b, double side_c) {
@@ -25,17 +26,35 @@ bool examination(double side_a, double side_b, double side_c) {
     return (side_a + side_b > side_c && side_a + side_c > side_b && side_b + side_c > side_a);
 }
 int Perimeter(int length, int width) {
-    return ((length + width) * 2);
+    if (length > 0 &&  width>0){ 
+        return ((length+width)*2);
+    }
+    else{
+        cout << "Cтороны не могут быть отрицательными"<<endl;
+    }
 }
 
 
 int rectangleArea(int length, int width) {
-    return (length * width);
+    if (length > 0 &&  width>0){ 
+        return (length * width);
+    }
+    else{
+        cout << "Cтороны не могут быть отрицательными"<<endl;
+    }
+    
+    
 }
 
 
 double diagonal_length(int length, int width) {
-    return sqrt((pow(length, 2) + pow(width, 2)));
+    if (length > 0 &&  width>0){ 
+        return (sqrt((pow(length, 2) + pow(width, 2))));
+    }
+    else{
+        cout << "Cтороны не могут быть отрицательными"<<endl;
+    }
+    
 }
 int perimeter_trapezoid(int side_a,int side_b,int side_c,int side_d) {
     return(side_a + side_b +side_c+side_d);
@@ -46,13 +65,8 @@ double trapezoid_area(int side_a,int side_b,int height){
 double middle_line(int side_a,int side_b){
     return((side_a+side_b) /2.0);
 }
-<<<<<<< HEAD
-int main(){
-    cout << "Здравствуйте, выберите номер:\n 1 - Вычисление параметров прямоугольника \n 2 - Вычисление параметров треугольника \n 3 - Вычисление параметров трапеции \n Ваш выбор" <<endl;
-=======
 int main() {
     cout << "Здравствуйте, выберите номер:\n 1 - Вычисление параметров прямоугольника \n 2 - Вычисление параметров треугольника \n 3 - Вычисление параметров трапеции \n Ваш выбор: ";
->>>>>>> trapezoid
     int numb;
     cin >> numb;
 
@@ -63,39 +77,35 @@ int main() {
         };
 
     switch (numb) {
-        case menu::rectangle:
+        case menu::rectangle: {
             cout << "Выберите номер:\n 1 - Периметр прямоугольника \n 2 - Площадь прямоугольника \n 3 - Длина диагонали прямоугольника \n Ваш выбор>>" << endl;
             int number;
             cin >> number;
-            enum rectagle{
-                perimeter_menu=1,
-                rectangArea_menu,
-                diagonal_length_menu,
-            };
+        
+            enum rectagle { perimeter_menu = 1, rectangArea_menu, diagonal_length_menu };
+        
             int length, width;
-            cout << "Введите длину прямоугольника: ";
+            cout << "Введите длину: ";
             cin >> length;
-            cout << "Введите ширину прямоугольника: ";
+            cout << "Введите ширину: ";
             cin >> width;
+        
             switch (number) {
-                case perimeter_menu:
+                case perimeter_menu: 
                     cout << "Периметр: " << Perimeter(length, width) << endl;
                     break;
-        
-                case rectangArea_menu:
+                case rectangArea_menu: 
                     cout << "Площадь: " << rectangleArea(length, width) << endl;
                     break;
-        
-                case diagonal_length_menu:
-                    cout << "Длина диагонали: " << diagonal_length(length, width) << endl;
+                case diagonal_length_menu: 
+                    cout << "Диагональ: " << diagonal_length(length, width) << endl;
                     break;
-        
-                default:
+                default: 
                     cout << "Неверный выбор!" << endl;
                     break;
-
-            break;
             }
+            break; 
+        }
         case menu::triangle: {
             cout << "Выберите номер:\n 1 - Периметр треугольника \n 2 - Площадь треугольника по формуле Герона \n 3 - Проверка треугольника на равнобедренность \n Ваш выбор: ";
             int number;
@@ -158,6 +168,7 @@ int main() {
 
                 default:
                     cout << "Неверный ввод значений" << endl;
+                    break;
             }
             break;
         }
