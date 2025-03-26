@@ -3,6 +3,7 @@
 using namespace std;
 
 //поросили комент сделать
+
 int Perimeter_t(int side_a, int side_b, int side_c) {
     return (side_a + side_b + side_c);
 }
