@@ -2,7 +2,7 @@
 #include <cmath>
 using namespace std;
 
-//поросили комент сделать
+//поросили комент сделать вот он
 
 int Perimeter_t(int side_a, int side_b, int side_c) {
     return (side_a + side_b + side_c);
