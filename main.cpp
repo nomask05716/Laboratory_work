@@ -2,6 +2,7 @@
 #include <cmath>
 using namespace std;
 
+//поросили комент сделать
 int Perimeter_t(int side_a, int side_b, int side_c) {
     return (side_a + side_b + side_c);
 }
@@ -217,7 +218,7 @@ int main() {
             }
             break;
         default:
-            cout << "Неверный выбор!" << endl;
+            cout << "Неверный выбор!!!" << endl;
             break;
     }
     return 0;
